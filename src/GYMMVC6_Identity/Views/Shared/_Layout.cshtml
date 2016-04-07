@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title - My ASP.NET MVC Application</title>
+    <link href="~/Images/dotnetsaifavicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css"/>
+    @RenderSection("head", required: false)
+</head>
+<body>
+    <header>
+
+        <div class="col-md-12 col-sm-12">
+            <section id="login"></section>
+        </div>
+
+    </header>
+    <div id="body">
+        @RenderSection("featured", required: false)
+        <section class="">
+            @RenderBody()
+        </section>
+    </div>
+    <footer>
+        <div class="container">
+            <div class="text-center footer">
+                Developed By <a href="mailto:saihacksoft@gmail.com">Saineshwar Bageri</a>
+                Designed By <a href="mailto:suryakantubhe@gmail.com">Suryakant Prakash ubhe</a>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <link href="~/content/themes/base/core.css" rel="stylesheet" />
+    <link href="~/content/themes/base/resizable.css" rel="stylesheet" />
+    <link href="~/content/themes/base/selectable.css" rel="stylesheet" />
+    <link href="~/content/themes/base/accordion.css" rel="stylesheet" />
+    <link href="~/content/themes/base/autocomplete.css" rel="stylesheet" />
+    <link href="~/content/themes/base/button.css" rel="stylesheet" />
+    <link href="~/content/themes/base/datepicker.css" rel="stylesheet" />
+    <link href="~/content/themes/base/dialog.css" rel="stylesheet" />
+    <link href="~/content/themes/base/progressbar.css" rel="stylesheet" />
+    <link href="~/content/themes/base/slider.css" rel="stylesheet" />
+    <link href="~/content/themes/base/tabs.css" rel="stylesheet" />
+    <link href="~/content/themes/base/theme.css" rel="stylesheet" />
+    <script src="~/scripts/modernizr-2.5.3.js"></script>
+    <script src="~/scripts/jquery-ui-1.11.4.js"></script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

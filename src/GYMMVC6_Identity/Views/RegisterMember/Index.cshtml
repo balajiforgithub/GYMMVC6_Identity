@@ -1,0 +1,53 @@
+﻿@model IEnumerable<GYMONE.Models.MemberRegistrationDTO>
+@using GridMvc.Html
+@using NonFactors.Mvc.Grid;
+@*@using WebGridMvc*@
+@{
+    ViewBag.Title = "Member Registration Details";
+}
+
+<link href="@Url.Content("~/Content/Gridmvc.css")" rel="stylesheet" />
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+<script src="@Url.Content("~/Scripts/jquery-1.9.1.min.js")"></script>
+<script src="@Url.Content("~/Scripts/gridmvc.min.js")"></script>
+<link href="~/content/site.css" rel="stylesheet"/>
+<link href="~/content/mvc-grid.css" rel="stylesheet" />
+<script src="~/scripts/mvc-grid.js"></script>
+
+<div class="container">
+     <div class="clearfix"></div>
+    <fieldset>
+        <legend class="legend">Member Registration Details</legend>
+
+        <div class="panel">
+
+            <div class="panel-body">
+                <div>
+                    @*@Html.ActionLink("Create Member", "Create", "RegisterMember", new { @class = "btn btn-info btn-pressure" })*@
+                    <a asp-controller="Create" asp-action="RegisterMember" class="btn btn-info btn-pressure">Create Member</a>
+                </div>
+
+             <div class="clearfix"></div>
+              @*@(Html.Grid(Model)
+                  .Build(columns =>
+                    {
+
+                        columns.Add(c => c.MemberNo).Titled("MemberNo").Filterable(true).Encoded(false);
+                        columns.Add(c => c.FullName).Titled("FullName").Filterable(true).Encoded(false);
+                        columns.Add(c => c.JoiningDate).Titled("JoiningDate").Formatted("{0:dd/MM/yyyy}");
+                        columns.Add(c => c.DOB).Titled("DOB").Filterable(true).Encoded(false).Formatted("{0:dd/MM/yyyy}");
+                        columns.Add(c=> "").Encoded(false).RenderedAs(o => Html.ActionLink("Edit", "Edit", new { MemID = o.MemID })).Titled("Edit");
+                        columns.Add(c=> "").Encoded(false).RenderedAs(o => Html.ActionLink("Delete", "Delete", new { MemID = o.MemID }, new { onclick = "return confirm('Are you sure you wish to delete this Member Rgistration ?');" })).Titled("Delete");
+                    }).Pageable(pager =>
+    {
+        pager.PagesToDisplay = 3;
+        pager.InitialPage = 2;
+        pager.RowsPerPage = 10;
+    }).Sortable())*@
+
+            </div>
+        </div>
+        $('.mvc-grid').mvcgrid();
+    </fieldset>
+
+</div>
